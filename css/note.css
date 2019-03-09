@@ -1,0 +1,55 @@
+.note {
+	width: 10rem;
+	height: 10rem;
+	background-color: #1abc9c;
+	margin: .5rem;
+	display: inline-block;
+	vertical-align: middle;
+	padding: .2rem;
+	position: relative;
+	cursor: pointer;
+	color: #fff;
+}
+
+.note:hover {
+	box-shadow: 0 0 3rem rgba(0, 0, 0, .3);
+}
+
+.note__title {
+	height: 8rem;
+	overflow: hidden;
+}
+
+.note__date {
+	position: absolute;
+	bottom: .2rem;
+	right: .2rem;
+	font-size: 1rem;
+	text-align: right;
+}
+
+.note:hover > .note__drop { opacity: 1; }
+
+.note__drop {
+	z-index: 1;
+	position: absolute;
+	top: -.5rem;
+	right: -.5rem;
+	opacity: 0;
+	transition: opacity .3s;
+}
+
+.note__drop::before {
+	content: 'x';
+	font-size: 1rem;
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #bdc3c7;
+	transition: background-color .3s;
+}
+
+.note__drop:hover::before { background-color: #e74c3c; }

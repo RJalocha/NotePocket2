@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>NotePocket</title>
+		<link rel="shortcut icon" type="image/png" href="resources/favicon.png"/>
+		
+		<link rel="stylesheet" href="css/scrollbar.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/head.css" />
+		<link rel="stylesheet" href="css/footer.css" />
+		<link rel="stylesheet" href="css/header.css" />
+		<link rel="stylesheet" href="css/button.css" />
+		<link rel="stylesheet" href="css/note.css" />
+		<link rel="stylesheet" href="css/editor.css" />
+		<link rel="stylesheet" href="css/colors.css" />
+		
+		<script src="js/date.js"></script>
+		<script src="js/notify.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/storage.js"></script>
+		<script src="js/note.js"></script>
+		<script src="js/editor.js"></script>
+	</head>
+	
+	<body>
+		
+		<header class="head">
+			<div class="head-logo">NotePocket</div>
+			<div class="head-button">
+				<button class="button" id="add_note">Dodaj notatkę</button>
+			</div>
+			<div class="head-search">
+				<input type="text" name="search-bar" placeholder="Wyszukaj notatkę..." id="search_bar" class="head-search__input"/>
+			</div>
+		</header>
+		
+		<div class="editor" id="e_container">
+			<div class="editor__header" id="e_header">Notatka<div class="editor__close" id="e_close">x</div></div>
+			<div class="editor__form">
+				<label class="editor__label" for="title">Tytuł:</label>
+				<input class="editor__input" type="text" name="title" id="e_input_title" />
+				<label class="editor__label" for="content">Notatka:</label>
+				<textarea class="editor__textarea" name="content" id="e_input_content"></textarea>
+				<label class="editor__label">Kolor:</label>
+				<div class="editor__radio u-background-color-turquoise" name="e_input_color" data-color="turquoise" data-selected="false"></div>
+				<div class="editor__radio u-background-color-emerald" name="e_input_color" data-color="emerald" data-selected="false"></div>
+				<div class="editor__radio u-background-color-peter-river" name="e_input_color" data-color="peter-river" data-selected="false"></div>
+				<div class="editor__radio u-background-color-amethyst" name="e_input_color" data-color="amethyst" data-selected="false"></div>
+				<div class="editor__radio u-background-color-wet-asphalt" name="e_input_color" data-color="wet-asphalt" data-selected="false"></div>
+				<div class="editor__radio u-background-color-sun-flower" name="e_input_color" data-color="sun-flower" data-selected="false"></div>
+				<div class="editor__radio u-background-color-carrot" name="e_input_color" data-color="carrot" data-selected="false"></div>
+				<div class="editor__radio u-background-color-alizarin" name="e_input_color" data-color="alizarin" data-selected="false"></div>
+				<div class="editor__radio u-background-color-clouds" name="e_input_color" data-color="clouds" data-selected="false"></div>
+				<div class="editor__radio u-background-color-concrete" name="e_input_color" data-color="concrete" data-selected="false"></div>
+				<label class="editor__label" for="remaind_at">Przypomnienie:</label>
+				<input class="editor__input" type="datetime-local" name="remaind_at" id="e_input_remaind_at" />
+				<label class="editor__label" for="pin">Przypnij:</label>
+				<input class="editor__checkbox" type="checkbox" name="pin" id="e_input_pin" />
+				<label class="editor__label" for="tag">Tagi (ENTER aby dodać):</label>
+				<input class="editor__input" type="text" name="tag" id="e_input_tag" />
+				<div class="editor__tags" id="e_output_tags"></div>
+				<button class="button button--form" id="e_submit">Zapisz</button>
+			</div>
+		</div>
+		
+		<section class="section-pin">
+		
+			<h1 class="header">Przypięte notatki</h1>
+			
+			<div class="notes" id="section-pin"></div>
+		
+		</section>
+		
+		<section class="section-main">
+		
+			<h1 class="header">Notatki</h1>
+			
+			<div class="notes" id="section-main"></div>
+			
+		</section>
+		
+		<footer class="footer">
+			Copyright &copy; by Tomasz Kapusta
+		</footer>
+		
+	</body>
+	
+</html>
